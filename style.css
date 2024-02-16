@@ -1,0 +1,42 @@
+body {
+    padding-top: 56px; /* Adjust the height of the navbar */
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 72px; /* Adjust the height of the navbar for larger screens */
+    }
+}
+
+.navbar {
+    background-color: #3498db; /* Navbar background color */
+}
+
+.navbar-brand {
+    color: #fff; /* Brand text color */
+}
+
+.navbar-brand:hover {
+    color: #fff; /* Brand text color on hover */
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* Navbar link text color */
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff; /* Navbar link text color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
