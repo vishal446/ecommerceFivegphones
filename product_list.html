@@ -1,0 +1,84 @@
+{% load static %}
+{% include "headerf.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+    <style>
+        body {
+            padding-top: 56px; /* Adjust the height of the navbar */
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-top: 72px; /* Adjust the height of the navbar for larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">Welcome to Your E-Commerce Store</h1>
+                <p class="lead">Discover amazing products and shop with confidence.</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for phone in mobiles %}
+                <div class="card">
+                    <img src="{{ phone.image_url }}" alt="{{ phone.title }}">
+                    <div class="card-body">
+                        <div class="title">{{ phone.title }}</div>
+                        <div class="price">Price:</h5>{{ phone.price }}</div>
+                        <div class="description"><h5>Description:</h5>{{ phone.description }}</div>
+                        <div class="rating">Rating: {{ phone.rating }}/5</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Featured Products -->
+        <!-- templates/product_card.html -->
+        
+   <!-- Include Bootstrap JS and Popper.js (optional but may be required for some Bootstrap features) -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    <!-- Bootstrap JS and dependencies -->
+   
+    <!-- <div class="product-card">
+        <img src="product1.jpg" alt="Product Image">
+        <div class="product-info">
+            <h2>Product Name</h2>
+            <p class="price">$19.99</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button>Add to Cart</button>
+        </div>
+    </div> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% include "footer.html" %}
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <h2>Product List</h2>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} - ${{ product.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html> -->
+
